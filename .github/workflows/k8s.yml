@@ -175,3 +175,11 @@ jobs:
       - name: Deploy
         run: |
           echo "todo: setup armory GHA"
+      - name: Armory Continuous Deployment-as-a-Service
+        uses: armory/cli-deploy-action@v1.0.0
+        with:
+          clientId: "${{ env.ARMORY_CLIENT_ID }" 
+          clientSecret:  "${{ env.ARMORY_CLIENT_SECRET }" 
+          path-to-file: "./armory-deploy.yml" 
+          waitForDeployment: false
+
