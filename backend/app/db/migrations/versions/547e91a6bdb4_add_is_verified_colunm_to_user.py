@@ -16,9 +16,7 @@ depends_on = None
 
 
 def upgrade() -> None:
-    op.add_column('users', sa.Column('is_verified', sa.Boolean, nullable=True))
-    op.execute('update users set is_verified=false')
-    op.alter_column('users', 'is_verified', nullable=False)
+    op.add_column('users', sa.Column('is_verified', sa.Boolean, nullable=False, server_default='f'))
 
 
 def downgrade() -> None:

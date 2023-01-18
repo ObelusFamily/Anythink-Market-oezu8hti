@@ -56,7 +56,7 @@ class UsersRepository(BaseRepository):
         password: Optional[str] = None,
         bio: Optional[str] = None,
         image: Optional[str] = None,
-        is_verified: Optional[str] = None,
+        is_verified: Optional[bool] = None,
     ) -> UserInDB:
         user_in_db = await self.get_user_by_username(username=user.username)
 
