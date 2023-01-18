@@ -180,6 +180,5 @@ jobs:
         with:
           clientId: "${{ env.ARMORY_CLIENT_ID }}" 
           clientSecret:  "${{ env.ARMORY_CLIENT_SECRET }}" 
-          path-to-file: "./armory-deploy.yml" 
-          waitForDeployment: false
+          path-to-file: "./armory-deploy.yml"
 
