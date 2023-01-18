@@ -56,6 +56,7 @@ class UsersRepository(BaseRepository):
         password: Optional[str] = None,
         bio: Optional[str] = None,
         image: Optional[str] = None,
+        is_verified: Optional[str] = None,
     ) -> UserInDB:
         user_in_db = await self.get_user_by_username(username=user.username)
 
@@ -63,6 +64,8 @@ class UsersRepository(BaseRepository):
         user_in_db.email = email or user_in_db.email
         user_in_db.bio = bio or user_in_db.bio
         user_in_db.image = image or user_in_db.image
+        user_in_db.is_verified = is_verified or user_in_db.is_verified
+        
         if password:
             user_in_db.change_password(password)
 
@@ -76,6 +79,7 @@ class UsersRepository(BaseRepository):
                 new_password=user_in_db.hashed_password,
                 new_bio=user_in_db.bio,
                 new_image=user_in_db.image,
+                new_is_verified=user_in_db.is_verified
             )
 
         return user_in_db

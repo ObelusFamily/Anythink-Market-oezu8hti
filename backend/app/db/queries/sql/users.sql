@@ -44,6 +44,7 @@ SET username        = :new_username,
     hashed_password = :new_password,
     bio             = :new_bio,
     image           = :new_image
+    is_verified     = :new_is_verified
 WHERE username = :username
 RETURNING
     updated_at;
