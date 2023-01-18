@@ -6,6 +6,7 @@ SELECT id,
        hashed_password,
        bio,
        image,
+       is_verified,
        created_at,
        updated_at
 FROM users
@@ -21,6 +22,7 @@ SELECT id,
        hashed_password,
        bio,
        image,
+       is_verified,
        created_at,
        updated_at
 FROM users
@@ -44,6 +46,7 @@ SET username        = :new_username,
     hashed_password = :new_password,
     bio             = :new_bio,
     image           = :new_image
+    is_verified     = :new_is_verified
 WHERE username = :username
 RETURNING
     updated_at;

@@ -7,4 +7,5 @@ class Profile(RWModel):
     username: str
     bio: str = ""
     image: Optional[str] = None
+    isVerified: bool = False
     following: bool = False
